@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-
+import Home from './home';
 function App() {
 	const history = useHistory()
 
@@ -32,6 +32,7 @@ function App() {
 
 	return (
 		<div>
+			<Home></Home>
 			<h1>Register</h1>
 			<form onSubmit={registerUser}>
 				<input
@@ -55,7 +56,7 @@ function App() {
 					placeholder="Password"
 				/>
 				<br />
-				<input type="submit" value="Register" />
+				<input type="submit" value="Register" className="btn btn-info" />
 			</form>
 		</div>
 	)

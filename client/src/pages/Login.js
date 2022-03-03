@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Home from './home';
 
 function App() {
 	const [email, setEmail] = useState('')
@@ -31,6 +32,7 @@ function App() {
 
 	return (
 		<div>
+			<Home></Home>
 			<h1>Login</h1>
 			<form onSubmit={loginUser}>
 				<input
@@ -47,7 +49,7 @@ function App() {
 					placeholder="Password"
 				/>
 				<br />
-				<input type="submit" value="Login" />
+				<input type="submit" value="Login" className="btn btn-info" />
 			</form>
 		</div>
 	)

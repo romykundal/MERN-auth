@@ -24,7 +24,7 @@ const Home = () => {
             >
               Sign up
             </NavLink>
-          </div>
+    </div>
 	)
 }
 
