@@ -7,11 +7,11 @@ const Task = require('./models/task.model');
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const secretID = "auth3334";
-
+const dotenv = require('dotenv').config();
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://romykundal:romykundal3334@cluster0.otrsi.mongodb.net/task1?retryWrites=true&w=majority')
+mongoose.connect( process.env.MONGODB_URI );
 
 /**
  * Route and functional for register user into user-data collection
