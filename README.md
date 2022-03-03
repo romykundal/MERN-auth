@@ -2,7 +2,8 @@
 
 ## react js mongodb atlas express jwt auth token backend bootstrap
 
-```Build functionality for user authentication on the front-end as well as the backend (You are free to use any third party library both on the front-end as well as the backend). a. A login page should take an email and a password to log the user in. b. A register page should take an email and a password to register the user. c. REST API routes “login” and “register” enabling the same functionality. d. The passwords have to be stored after hashing on the database. e. Access JWT tokens have to be refreshed every hour....
+```
+Build functionality for user authentication on the front-end as well as the backend (You are free to use any third party library both on the front-end as well as the backend). a. A login page should take an email and a password to log the user in. b. A register page should take an email and a password to register the user. c. REST API routes “login” and “register” enabling the same functionality. d. The passwords have to be stored after hashing on the database. e. Access JWT tokens have to be refreshed every hour
 ```
 
 ```
