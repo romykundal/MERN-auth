@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import 'dotenv/config'
 class Create extends Component {
 
   constructor() {
@@ -23,7 +23,7 @@ class Create extends Component {
 
     const { title,  description } = this.state;
 
-    axios.post('http://localhost:1337/api/task', { title, description })
+    axios.post(process.env.REACT_APP_HOST+'/api/task', { title, description })
       .then((result) => {
         this.props.history.push("/task")
       });
@@ -32,7 +32,7 @@ class Create extends Component {
   render() {
     const { title, description } = this.state;
     return (
-      <div className='Create'>
+      <div className='container'>
         <div className="panel panel-default">
           <div className="panel-heading">
             <h3 className="panel-title">

@@ -11,11 +11,13 @@ import Edit from './pages/task/Edit';
 import Create from './pages/task/Create';
 import Show from './pages/task/Show';
 import List from './pages/task/List';
+import Landing from './pages/Landing'
+
 const App = () => {
 	return (
 		<div>
 			<BrowserRouter>
-			<Route path="/" exact component={Home} />
+			<Route path="/" exact component={Landing} />
 				<Route path="/login" exact component={Login} />
 				<Route path="/register" exact component={Register} />
 				<Route path="/dashboard" exact component={Dashboard} />

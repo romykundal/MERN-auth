@@ -5,11 +5,11 @@ const Home = () => {
 
 	return (
 		<div className="navbar-start">
-            <NavLink className="navbar-item" activeClassName="is-active" to="/">
+            <h1><NavLink className="navbar-item" activeClassName="is-active" to="/">
               Home
             </NavLink>
 			| 
-            <NavLink
+      <NavLink
               className="navbar-item"
               activeClassName="is-active"
               to="/login"
@@ -17,13 +17,13 @@ const Home = () => {
               Login
             </NavLink>
  				| 
-            <NavLink
+         <NavLink
               className="navbar-item"
               activeClassName="is-active"
               to="/register"
             >
               Sign up
-            </NavLink>
+            </NavLink></h1>
     </div>
 	)
 }

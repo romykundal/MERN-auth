@@ -10,8 +10,11 @@ const secretID = "auth3334";
 const dotenv = require('dotenv').config();
 app.use(cors())
 app.use(express.json())
+var path = require('path');
 
 mongoose.connect( process.env.MONGODB_URI );
+
+app.use('/', express.static(path.join(__dirname, '../client/build')));
 
 /**
  * Route and functional for register user into user-data collection
@@ -185,6 +188,14 @@ app.get('/api/task/:id', async (req, res) => {
 	}
 })
 
+
+// route for the frontend app
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+});
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+});
 
 app.listen(1337, () => {
 	console.log('Server started on 1337')

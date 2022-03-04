@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import 'dotenv/config'
 class List extends Component {
 
   constructor(props) {
@@ -13,7 +13,7 @@ class List extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:1337/api/tasks')
+    axios.get(process.env.REACT_APP_HOST+'/api/tasks')
       .then(res => {
         this.setState({ tasks: res.data.data });
         console.log(this.state.tasks);
@@ -24,7 +24,7 @@ class List extends Component {
     if (window.confirm("Do you want to delete record?") == true) {
       
         console.log(id);
-        axios.delete('http://localhost:1337/api/task/'+id)
+        axios.delete(process.env.REACT_APP_HOST+'/api/task/'+id)
           .then((result) => {
             console.log(result)
           });
