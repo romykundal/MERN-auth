@@ -11,8 +11,8 @@ const dotenv = require('dotenv').config();
 app.use(cors())
 app.use(express.json())
 var path = require('path');
-//process.env.MONGODB_URI
-mongoose.connect( "mongodb+srv://romykundal:romykundal3334@cluster0.otrsi.mongodb.net/task1?retryWrites=true&w=majority" );
+
+mongoose.connect( process.env.MONGODB_URI );
 
 app.use('/', express.static(path.join(__dirname, './client/build')));
 
