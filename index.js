@@ -12,7 +12,9 @@ app.use(cors())
 app.use(express.json())
 var path = require('path');
 
-mongoose.connect( process.env.MONGODB_URI, { useNewUrlParser: true } );
+mongoose.connect( process.env.MONGODB_URI, { 
+	useNewUrlParser: true,
+	useUnifiedTopology: true } );
 
 app.use('/', express.static(path.join(__dirname, './client/build')));
 
@@ -197,6 +199,6 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 });
 
-app.listen(1337, () => {
-	console.log('Server started on 1337')
+app.listen(80, () => {
+	console.log('Server started on 80')
 })
