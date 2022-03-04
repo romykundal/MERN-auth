@@ -14,7 +14,7 @@ var path = require('path');
 
 mongoose.connect( process.env.MONGODB_URI );
 
-app.use('/', express.static(path.join(__dirname, '../client/build')));
+app.use('/', express.static(path.join(__dirname, './client/build')));
 
 /**
  * Route and functional for register user into user-data collection
@@ -191,10 +191,10 @@ app.get('/api/task/:id', async (req, res) => {
 
 // route for the frontend app
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    res.sendFile(path.join(__dirname, './client/build/index.html'))
 });
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    res.sendFile(path.join(__dirname, './client/build/index.html'))
 });
 
 app.listen(1337, () => {
