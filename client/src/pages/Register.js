@@ -1,4 +1,4 @@
-import constants from 'constants';
+import 'dotenv/config'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Home from './home';
@@ -12,7 +12,7 @@ function App() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch(constants.REACT_APP_HOST+'/api/register', {
+		const response = await fetch(process.env.REACT_APP_HOST+'/api/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import constants from 'constants';
+import 'dotenv/config'
 class Edit extends Component {
 
   constructor(props) {
@@ -12,7 +12,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    axios.get(constants.REACT_APP_HOST+'/api/task/'+this.props.match.params.id)
+    axios.get(process.env.REACT_APP_HOST+'/api/task/'+this.props.match.params.id)
       .then(res => {
         this.setState({ task: res.data.data });
         console.log(this.state.task);
@@ -30,7 +30,7 @@ class Edit extends Component {
 
     const { title, description } = this.state.task;
 
-    axios.put(constants.REACT_APP_HOST+'/api/task/'+this.props.match.params.id, {  title, description })
+    axios.put(process.env.REACT_APP_HOST+'/api/task/'+this.props.match.params.id, {  title, description })
       .then((result) => {
         this.props.history.push("/task/show/"+this.props.match.params.id)
       });

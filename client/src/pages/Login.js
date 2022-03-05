@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Home from './home';
-import constants from 'constants';
+import 'dotenv/config'
 function App() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -8,7 +8,7 @@ function App() {
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch(constants.REACT_APP_HOST+`/api/login`, {
+		const response = await fetch(process.env.REACT_APP_HOST+`/api/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
