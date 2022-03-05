@@ -199,6 +199,6 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 });
 
-app.listen(1337, () => {
+app.listen(process.env.PORT || 1337, () => {
 	console.log('Server started on 1337')
 })
