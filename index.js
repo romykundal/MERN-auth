@@ -199,6 +199,6 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 });
 
-app.listen(80, () => {
-	console.log('Server started on 80')
+app.listen(1337, () => {
+	console.log('Server started on 1337')
 })
