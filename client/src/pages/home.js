@@ -6,7 +6,7 @@ const Home = () => {
 	return (
 		<div className="navbar-start">
             <h3><NavLink className="navbar-item" activeClassName="is-active" to="/">
-              Home
+              Home1
             </NavLink>
 			| 
       <NavLink
